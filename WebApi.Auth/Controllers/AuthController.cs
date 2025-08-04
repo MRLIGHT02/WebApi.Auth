@@ -24,7 +24,7 @@ namespace WebApi.Auth.Controllers
         [HttpPost("Login")]
         public ActionResult<User?> Login(UserDto request)
         {
-            if (_user.UserName != request.UserName)
+            if (_user!.UserName != request.UserName)
             {
                 return Unauthorized("Invailid UserName");
             }
